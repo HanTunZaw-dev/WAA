@@ -18,6 +18,6 @@ public class Course_Details {
     private float credit;
     private String program;
     private int last_updated;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Course courses;
 }
