@@ -2,8 +2,6 @@ package miu.edu.mocktest.service.Impl;
 
 import miu.edu.mocktest.Repo.StudentRepo;
 import miu.edu.mocktest.domain.Student;
-import miu.edu.mocktest.dto.StudentDto;
-import miu.edu.mocktest.helper.ListMapper;
 import miu.edu.mocktest.service.StudentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +17,14 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     ModelMapper modelMapper;
 
-    @Autowired
-    ListMapper<Student, StudentDto> listMapperStudentToDto;
     @Override
-    public List<StudentDto> findAll() {
-        return (List<StudentDto>) listMapperStudentToDto.mapList(studentRepo.findAll(), new StudentDto());
+    public List<Student> findAll() {
+        return studentRepo.findAll();
     }
 
     @Override
-    public StudentDto getById(long id) {
-        return modelMapper.map(studentRepo.findById(id), StudentDto.class);
+    public Student getById(long id) {
+        return modelMapper.map(studentRepo.findById(id), Student.class);
     }
 
     @Override
