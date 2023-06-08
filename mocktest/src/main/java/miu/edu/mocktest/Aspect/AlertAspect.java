@@ -8,11 +8,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class AlertAspect {
 
-    @Pointcut("execution(java.util.List<miu.edu.mocketest.domain.Student> miu.edu.mocketest.controller.StudentController.*(..))")
+    @Pointcut("execution(java.util.List<miu.edu.mocktest.domain.Student> miu.edu.mocktest.controller.StudentController.*(..))")
     private void returnListStudentController(){}
 
     @AfterReturning("returnListStudentController()")
     public void sendAlert( JoinPoint joinpoint ){
         // implementation to send alert ...
+        System.out.println(joinpoint);
     }
 }
