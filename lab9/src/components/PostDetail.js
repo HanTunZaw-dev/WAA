@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import Comments from './Comments'
-import Comment from './Comments'
 
 export default function PostDetail({ postId, changeFetchFlag }) {
     console.log('RENDER POST DETAIL')
@@ -50,8 +49,8 @@ export default function PostDetail({ postId, changeFetchFlag }) {
                         <div className="card-header">Comments</div>
                         <Comments postId={postId} />
                         <div className='text-center'>
-                            <a href="#" className="card-link">edit</a>
-                            <a href="#" className="card-link" onClick={handleDelete}>delete</a>
+                            <a href="##" className="card-link">edit</a>
+                            <a href="##" className="card-link" onClick={handleDelete}>delete</a>
                         </div>
                     </div>
                 </div>

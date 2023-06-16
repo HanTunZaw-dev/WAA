@@ -21,13 +21,9 @@ export default function Dashboard() {
 
   return (
     <div>
-      {/* lab 9 - clicked Item id pass via Selected Context. Post to Dashboard */}
       <Selected.Provider value={handleClickedItem}>        
         <Posts fetchFlag={fetchFlag}/>
 
-        {/* lab 8 - clicked Item id pass via props Post > Posts > Dashboard
-         <Posts clickedItem={handleClickedItem} fetchFlag={fetchFlag}/> 
-         */}
         <AddPost changeFetchFlag={changeFetchFlag} />
         {
             clickedItemId !== 0  &&
