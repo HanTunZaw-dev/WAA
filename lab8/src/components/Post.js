@@ -3,8 +3,7 @@ import React from 'react'
 export default function Post({ id, title, author, handleClick }) {
 
     const ownClick = () => {
-        handleClick(id)//this id is back to HOC handleClick prop, which is Posts
-        //console.log(`Post : ${id}`)
+        handleClick(id)
     }
 
     return (

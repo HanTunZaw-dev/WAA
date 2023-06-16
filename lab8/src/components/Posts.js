@@ -21,7 +21,7 @@ export default function Posts({ fetchFlag, clickedItem }) {
     }, [fetchFlag])
 
     const handleClick = (id) => {
-        clickedItem(id)//this id is bind back to HOC handleClick prop, which is Dashboard
+        clickedItem(id)
         console.log(`Posts : ${id}`)
     }
     return (
@@ -30,9 +30,6 @@ export default function Posts({ fetchFlag, clickedItem }) {
                 {
                     posts.map(s =>
                         <Post key={s.id} id={s.id} title={s.title} author={s.author} handleClick={handleClick} />
-                        //handleClick={(id) => handleClick(id)} 
-                        //- 1st id is return from child component
-                        //- 2nd id is pass that id to handlClick func above
                     )
                 }
             </div>
